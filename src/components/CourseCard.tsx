@@ -1,8 +1,10 @@
 
-import { Clock, Users, Star } from "lucide-react";
+import { useState } from "react";
+import { Clock, Users, Star, BookOpen } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { toast } from "@/hooks/use-toast";
 
 export interface CourseCardProps {
   id: string;
@@ -18,6 +20,7 @@ export interface CourseCardProps {
 }
 
 const CourseCard = ({
+  id,
   title,
   description,
   image,
@@ -28,21 +31,51 @@ const CourseCard = ({
   rating,
   instructor,
 }: CourseCardProps) => {
+  const [isSaved, setIsSaved] = useState(false);
+  
+  const handleEnroll = () => {
+    // In a real app, this would handle the enrollment process
+    toast({
+      title: "Course Enrollment",
+      description: `You've successfully enrolled in "${title}"`,
+    });
+  };
+  
+  const handleSave = () => {
+    setIsSaved(!isSaved);
+    toast({
+      title: isSaved ? "Course Removed" : "Course Saved",
+      description: isSaved 
+        ? `"${title}" has been removed from your saved courses.` 
+        : `"${title}" has been added to your saved courses.`,
+    });
+  };
+
   return (
     <Card className="card-hover overflow-hidden">
-      <div className="h-48 overflow-hidden">
+      <div className="h-48 overflow-hidden relative group">
         <img 
           src={image} 
           alt={title} 
-          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" 
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
         />
+        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <Button 
+            variant="secondary" 
+            size="sm" 
+            className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+          >
+            <BookOpen className="mr-2 h-4 w-4" />
+            Preview
+          </Button>
+        </div>
       </div>
       <CardHeader className="pb-2">
         <div className="flex justify-between items-start">
           <Badge className="bg-accent hover:bg-accent/90">{category}</Badge>
           <Badge variant="outline">{level}</Badge>
         </div>
-        <h3 className="font-bold text-lg mt-2 line-clamp-2">{title}</h3>
+        <h3 className="font-bold text-lg mt-2 line-clamp-2 hover:text-primary cursor-pointer">{title}</h3>
         <p className="text-sm text-muted-foreground">by {instructor}</p>
       </CardHeader>
       <CardContent className="pb-2">
@@ -62,8 +95,15 @@ const CourseCard = ({
           </div>
         </div>
       </CardContent>
-      <CardFooter>
-        <Button className="w-full">Enroll Now</Button>
+      <CardFooter className="flex gap-2">
+        <Button 
+          variant="outline" 
+          className="flex-1" 
+          onClick={handleSave}
+        >
+          {isSaved ? "Saved" : "Save"}
+        </Button>
+        <Button className="flex-1" onClick={handleEnroll}>Enroll Now</Button>
       </CardFooter>
     </Card>
   );
