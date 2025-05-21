@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
@@ -13,6 +12,7 @@ import CourseCTA from "@/components/courses/CourseCTA";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Book, BookOpen, Users, Award, Rocket } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [courseCategory, setCourseCategory] = useState("all");
@@ -312,8 +312,10 @@ const Index = () => {
             </Tabs>
             
             <div className="text-center mt-12">
-              <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
-                <BookOpen className="mr-2 h-5 w-5" /> View All Courses
+              <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
+                <Link to="/courses">
+                  <BookOpen className="mr-2 h-5 w-5" /> View All Courses
+                </Link>
               </Button>
             </div>
           </div>
@@ -394,8 +396,10 @@ const Index = () => {
             </div>
             
             <div className="text-center mt-12">
-              <Button variant="outline" size="lg" className="border-accent text-accent hover:bg-accent/10">
-                <Book className="mr-2 h-5 w-5" /> Explore All Paths
+              <Button asChild variant="outline" size="lg" className="border-accent text-accent hover:bg-accent/10">
+                <Link to="/paths">
+                  <Book className="mr-2 h-5 w-5" /> Explore All Paths
+                </Link>
               </Button>
             </div>
           </div>
@@ -475,8 +479,10 @@ const Index = () => {
             </div>
             
             <div className="text-center mt-12">
-              <Button variant="outline" size="lg" className="border-secondary text-secondary hover:bg-secondary/10">
-                <Users className="mr-2 h-5 w-5" /> Browse All Jobs
+              <Button asChild variant="outline" size="lg" className="border-secondary text-secondary hover:bg-secondary/10">
+                <Link to="/jobs">
+                  <Users className="mr-2 h-5 w-5" /> Browse All Jobs
+                </Link>
               </Button>
             </div>
           </div>

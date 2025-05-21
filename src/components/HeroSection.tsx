@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -31,13 +32,17 @@ const HeroSection = () => {
               </p>
               <div className="mt-8 sm:mt-10 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
-                  <Button className="w-full flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 md:py-4 md:text-lg md:px-10 transition-all duration-300 hover:-translate-y-1">
-                    Explore Courses
+                  <Button asChild className="w-full flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 md:py-4 md:text-lg md:px-10 transition-all duration-300 hover:-translate-y-1">
+                    <Link to="/courses">
+                      Explore Courses
+                    </Link>
                   </Button>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <Button variant="outline" className="w-full flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 border-primary md:py-4 md:text-lg md:px-10 transition-all duration-300 hover:-translate-y-1">
-                    View Jobs <ArrowRight className="ml-2 h-5 w-5" />
+                  <Button asChild variant="outline" className="w-full flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 border-primary md:py-4 md:text-lg md:px-10 transition-all duration-300 hover:-translate-y-1">
+                    <Link to="/jobs">
+                      View Jobs <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
                   </Button>
                 </div>
               </div>

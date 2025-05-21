@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, User } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,8 +57,15 @@ const Navbar = () => {
           </div>
           
           <div className="hidden md:ml-6 md:flex md:items-center">
-            <Button variant="outline" className="mr-2">Sign In</Button>
-            <Button>Get Started</Button>
+            <Link to="/auth/signin">
+              <Button variant="outline" className="mr-2">Sign In</Button>
+            </Link>
+            <Link to="/auth/signup">
+              <Button>Get Started</Button>
+            </Link>
+            <Link to="/profile" className="ml-2 p-2 rounded-full hover:bg-gray-100">
+              <User className="h-5 w-5 text-gray-600" />
+            </Link>
           </div>
           
           {/* Mobile menu button */}
@@ -105,12 +112,23 @@ const Navbar = () => {
             >
               Jobs
             </Link>
+            <Link 
+              to="/profile"
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+              onClick={toggleMenu}
+            >
+              My Profile
+            </Link>
           </div>
           <div className="pt-4 pb-3 border-t border-gray-200">
             <div className="flex items-center px-4">
               <div className="flex-shrink-0">
-                <Button variant="outline" className="mr-2 w-full mb-2">Sign In</Button>
-                <Button className="w-full">Get Started</Button>
+                <Link to="/auth/signin" onClick={toggleMenu}>
+                  <Button variant="outline" className="mr-2 w-full mb-2">Sign In</Button>
+                </Link>
+                <Link to="/auth/signup" onClick={toggleMenu}>
+                  <Button className="w-full">Get Started</Button>
+                </Link>
               </div>
             </div>
           </div>
