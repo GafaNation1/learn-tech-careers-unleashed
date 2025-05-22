@@ -1,6 +1,6 @@
-
 import { Link } from "react-router-dom";
-import { Twitter, Facebook, Instagram, Linkedin, Mail } from "lucide-react";
+import { Twitter, Facebook, Instagram, Linkedin, Mail, Youtube } from "lucide-react";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
@@ -8,12 +8,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <Link to="/" className="flex items-center">
-              <div className="h-8 w-8 rounded-md bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white text-sm font-bold mr-2">
-                GN
-              </div>
-              <span className="text-2xl font-bold">GAFANATION</span>
-            </Link>
+            <Logo variant="white" />
             <p className="mt-2 text-gray-400 text-sm">
               Empowering tech careers through education and job placement.
             </p>
@@ -29,6 +24,9 @@ const Footer = () => {
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <Linkedin className="h-5 w-5" />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+                <Youtube className="h-5 w-5" />
               </a>
             </div>
             <div className="mt-4">

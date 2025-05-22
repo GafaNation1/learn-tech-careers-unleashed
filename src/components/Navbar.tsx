@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, User } from "lucide-react";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,12 +17,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center">
-              <div className="h-10 w-10 rounded-md bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white text-xl font-bold mr-2">
-                GN
-              </div>
-              <span className="text-2xl font-bold gradient-text">GAFANATION</span>
-            </Link>
+            <Logo size="medium" />
           </div>
           
           {/* Desktop navigation */}
