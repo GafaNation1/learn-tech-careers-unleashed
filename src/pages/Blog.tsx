@@ -2,7 +2,6 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const Blog = () => {
@@ -73,9 +72,6 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Helmet>
-        <title>Blog | GAFANATION</title>
-      </Helmet>
       <Navbar />
       <main className="flex-1 bg-gray-50">
         <div className="py-12 bg-primary text-white">
