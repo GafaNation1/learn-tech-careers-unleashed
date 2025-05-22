@@ -17,6 +17,9 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
+              <div className="h-10 w-10 rounded-md bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white text-xl font-bold mr-2">
+                GN
+              </div>
               <span className="text-2xl font-bold gradient-text">GAFANATION</span>
             </Link>
           </div>
@@ -53,6 +56,9 @@ const Navbar = () => {
             </Link>
             <Link to="/jobs" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary">
               Jobs
+            </Link>
+            <Link to="/about" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary">
+              About Us
             </Link>
           </div>
           
@@ -111,6 +117,13 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               Jobs
+            </Link>
+            <Link 
+              to="/about"
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+              onClick={toggleMenu}
+            >
+              About Us
             </Link>
             <Link 
               to="/profile"

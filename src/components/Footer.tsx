@@ -8,23 +8,33 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <Link to="/" className="text-2xl font-bold">GAFANATION</Link>
+            <Link to="/" className="flex items-center">
+              <div className="h-8 w-8 rounded-md bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white text-sm font-bold mr-2">
+                GN
+              </div>
+              <span className="text-2xl font-bold">GAFANATION</span>
+            </Link>
             <p className="mt-2 text-gray-400 text-sm">
               Empowering tech careers through education and job placement.
             </p>
             <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <Linkedin className="h-5 w-5" />
               </a>
+            </div>
+            <div className="mt-4">
+              <p className="text-gray-400 text-sm">Contact us:</p>
+              <a href="mailto:mikealoo2005@gmail.com" className="text-gray-400 hover:text-white text-sm">mikealoo2005@gmail.com</a>
+              <p className="text-gray-400 text-sm">+254705047204</p>
             </div>
           </div>
           <div>
@@ -41,6 +51,9 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/courses/ai-ml" className="text-gray-400 hover:text-white text-sm">AI & Machine Learning</Link>
+              </li>
+              <li>
+                <Link to="/courses" className="text-gray-400 hover:text-white text-sm">All Courses</Link>
               </li>
             </ul>
           </div>
