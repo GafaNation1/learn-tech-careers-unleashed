@@ -1,14 +1,10 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Helmet } from "react-helmet";
 
 const Careers = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Helmet>
-        <title>Careers | GAFANATION</title>
-      </Helmet>
       <Navbar />
       <main className="flex-1 bg-gray-50">
         <div className="py-12 bg-primary text-white">

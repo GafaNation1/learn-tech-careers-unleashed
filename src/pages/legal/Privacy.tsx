@@ -1,16 +1,12 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Helmet } from "react-helmet";
 
 const Privacy = () => {
   const lastUpdated = "May 22, 2025";
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Helmet>
-        <title>Privacy Policy | GAFANATION</title>
-      </Helmet>
       <Navbar />
       <main className="flex-1 bg-gray-50">
         <div className="py-8 bg-primary text-white">
